@@ -8,7 +8,7 @@ export default {
         customBrown: "#732900",
         textColor: "#0E0E0C",
         textTertiaryColor: "#5A3B00",
-        paragraphColor:"#8B8271",
+        secondary:"#8B8271",
         inputColor:"#F6F3F1"
 
 

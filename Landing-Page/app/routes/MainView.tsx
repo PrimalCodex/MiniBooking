@@ -1,5 +1,4 @@
 export default function MainView() {
-
   const texts = [
     "Find your favorite bar's favorite bars.",
     "Enjoy your favorite restaurant's favorite restaurant.",
@@ -9,33 +8,39 @@ export default function MainView() {
   const randomText = texts[Math.floor(Math.random() * texts.length)];
 
   return (
-    <div className="flex flex-row max-w-[70rem] h-[48rem] mt-[8.5rem] ml-[10rem] gap-[3rem] items-center">
-      <div className="w-[30rem] h-[18rem]">
-        <div className="w-[30rem] h-[13.5rem] gap-[1.25rem]">
-          <p className="w-[36rem] font-custom font-light text-[3rem] leading-[3.5rem] text-textTertiaryColor">
-            Be a regular{' '}
-            <span className="font-custom font-semibold text-[3rem] leading-[3.5rem]">
-            anywhere<br/>
-              in the world
-            </span>
-          </p>
-          <p className={"font-custom  text-[1.2rem] mt-[1rem] leading-[1.5rem] text-paragraphColor"}>
-            {randomText}
-          </p>
-        </div>
-        <div className="flex w-[30rem] h-[4rem]">
-          <input placeholder={'Enter your email address'}
-                 className={'w-full h-full bg-inputColor rounded-tl-lg rounded-bl-lg p-[1rem] gap-[1rem] pr-0'}/>
-          <button
-            className="w-[9rem] h-full bg-customBrown rounded-tr-lg rounded-br-lg flex items-center justify-center">
-            <span className="text-white font-custom font-normal text-[1rem]">
-              Join waitlist
-            </span>
+    <div className="flex flex-col lg:flex-row max-w-[80rem] mx-auto h-auto lg:h-[48rem] mt-8 lg:mt-[8.5rem] px-6 lg:px-20 gap-12 lg:gap-24 ite-center">
+      {/* Left Section */}
+      <div className="w-full lg:w-[40rem] text-left">
+        <p className="font-custom font-light text-3xl lg:text-[3.5rem] leading-[1.2] text-textTertiaryColor">
+          Be a regular{" "}
+          <span className="font-semibold text-primaryColor">
+            anywhere <br /> in the world
+          </span>
+        </p>
+        <p className="font-custom text-lg lg:text-xl mt-4 lg:mt-6 text-paragraphColor leading-relaxed">
+          {randomText}
+        </p>
+
+        {/* Input and Button */}
+        <div className="flex w-full mt-6 lg:mt-8">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            className="w-full h-14 lg:h-16 bg-inputColor rounded-l-lg px-4 text-base lg:text-lg"
+          />
+          <button className="w-32 lg:w-40 h-14 lg:h-16 bg-customBrown text-white font-medium rounded-r-lg">
+            Join waitlist
           </button>
         </div>
       </div>
-      <div>
-        <img className={" max-h-[48rem]"} src="assets/Version01.png" alt="MobileView"/>
+
+      {/* Right Section (Image) */}
+      <div className="w-full lg:w-auto flex justify-center">
+        <img
+          className="object-cover w-full max-w-md lg:max-w-[30rem]"
+          src="assets/Version01.png"
+          alt="MobileView"
+        />
       </div>
     </div>
   );
