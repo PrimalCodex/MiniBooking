@@ -12,8 +12,9 @@ export default function LandingPage() {
   const randomText = texts[Math.floor(Math.random() * texts.length)];
   return (
     <div className="items-center flex flex-col overflow-hidden w-full ">
-      <div className="flex items-center text-left w-full h-[4.5rem] lg:px-0 px-[1.75rem] py-[1rem] gap-[1.75rem]
-      border-b-white-[0.05rem] justify-between lg:h-[4rem] lg:w-[70rem] lg:mt-5">
+      <div className="flex items-center justify-between text-left w-full lg:w-[70rem] h-[4.5rem] lg:h-[4rem]
+      lg:px-0 px-[1.75rem] py-[1rem] lg:mt-5 gap-[1.75rem]
+      border-b-white-[0.05rem]">
         <img
           src="/assets/Corner_Table_LogoMay20242.png"
           alt="Corner Table Logo"
@@ -21,44 +22,46 @@ export default function LandingPage() {
         />
         <div className={'flex flex-none items-center w-auto gap-1'}>
           <p
-            className="font-custom text-textColor text-right font-normal lg:text-[0.9rem] text-[0.75rem] hidden lg:block">
+            className="font-custom text-textColor text-right lg:text-[0.9rem] text-[0.75rem] hidden lg:block">
             Do you in the hospitality industry?{" "}
           </p>
           <p className="lg:hidden font-custom text-textColor text-right font-normal text-[0.75rem]">
             Are you in the industry?{" "}
           </p>
-          <Link to="hospitality" className={"font-custom text-[0.75rem] lg:text-[0.9rem] text-customBrown"}>
+          <Link
+            to="hospitality"
+            className={"font-custom text-[0.75rem] lg:text-[0.9rem] text-customBrown"}>
             Go here
           </Link>
         </div>
       </div>
       <div className={"lg:flex lg:flex-row items-center lg:h-[48rem] lg:w-[70rem] lg:justify-between"}>
-        <div className="flex flex-col w-fit h-[18rem] p-4 gap-[1.75rem] lg:h-[18rem] lg:text-left">
+        <div className="flex flex-col w-fit h-[18rem] lg:h-[18rem] p-4 gap-[1.75rem] lg:text-left">
           <div className="flex-col w-full h-auto gap-4 lg:flex lg:gap-5">
             <p
-              className="font-custom font-light text-[2rem] text-center italic lg:not-italic text-textTertiaryColor
-                lg:text-left lg:text-[3rem]">
+              className="font-custom font-light text-[2rem] text-center lg:text-left lg:text-[3rem]
+              italic lg:not-italic text-textTertiaryColor">
               Be a regular{" "} <br className="block lg:hidden"/>
-              <span className="lg:text-left not-italic font-semibold text-primaryColor">
+              <span className="lg:text-left not-italic font-semibold ">
                   anywhere{" "}
                 <br className="hidden lg:block"/>
                   in the world{" "}
               </span>
             </p>
             <p
-              className="lg:text-left lg:text-[1rem] w-[22rem] h-[4rem] font-custom text-[0.8rem] font-normal text-secondary leading-[1.3rem] text-center">
+              className="text-[0.8rem] text-center lg:text-left lg:text-[1rem] w-[22rem] h-[4rem]
+              font-custom font-normal leading-[1.3rem] text-secondary">
               {randomText}
             </p>
-            <div className="flex flex-col h-auto w-full gap-4 lg:flex-row lg:w-full
-            lg:[h-3rem] lg:gap-0">
+            <div className="flex flex-col h-auto lg:[h-3rem] w-full gap-4 lg:gap-0 lg:flex-row lg:w-full">
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="font-custom text-[0.8rem] lg:text-[0.9rem] w-full h-[3.25rem] rounded-[0.25rem] bg-inputColor py-5 pl-[1rem]
-                gap-2.5 lg:w-[20rem] lg:h-full "
-              />
+                className="w-full lg:w-[20rem] h-[3.25rem] lg:h-full outline-0 font-custom text-[0.8rem]
+                lg:text-[0.9rem] rounded-[0.25rem] bg-inputColor py-5 pl-[1rem] gap-2.5 "/>
               <button
-                className="w-full h-auto rounded px-3 py-4 gap-1 lg:text-[0.9rem] bg-customBrown text-white lg:w-[8rem] lg:rounded-tl-none lg:rounded-bl-none">
+                className="w-full h-auto rounded px-3 py-4 gap-1 lg:text-[0.9rem] bg-customBrown
+                 text-white lg:w-[8rem] lg:rounded-tl-none lg:rounded-bl-none">
                 <span className="block lg:hidden">Get notified</span>
                 <span className={"hidden lg:block font-custom font-[1rem]"}>Join waitlist</span>
               </button>
