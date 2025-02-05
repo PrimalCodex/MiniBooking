@@ -1,6 +1,6 @@
 import {Link} from "@remix-run/react";
 
-export default function LandingPage() {
+export default function RegularLandingPage() {
 
   const texts = [
     "Find your favorite bar's favorite bars.",
@@ -8,8 +8,8 @@ export default function LandingPage() {
     "Meet your favorite bartender's favorite bartender.",
     "Visit your favorite chef's favorite chefs."
   ];
-
   const randomText = texts[Math.floor(Math.random() * texts.length)];
+
   return (
     <div className="items-center flex flex-col w-full justify-center ">
       <div className="flex items-center justify-between text-left w-full lg:w-[70rem] h-[4.5rem] lg:h-[4rem]
@@ -21,15 +21,11 @@ export default function LandingPage() {
           className="w-[6.25rem] lg:w-[10rem] h-[2.5rem] lg:h-[4rem]"
         />
         <div className="flex flex-none items-center w-auto gap-1">
-          <p
-            className="font-custom text-textColor text-right lg:text-[0.9rem] text-[0.75rem] hidden lg:block">
-            Do you in the hospitality industry?{" "}
-          </p>
           <p className="lg:hidden font-custom text-textColor text-right font-normal text-[0.75rem]">
-            Are you in the industry?{" "}
+            Are you a regular?{" "}
           </p>
           <Link
-            to="hospitality"
+            to="/regularLandingPage.tsx"
             className={"font-custom text-[0.75rem] lg:text-[0.9rem] text-customBrown"}>
             Go here
           </Link>
@@ -41,11 +37,11 @@ export default function LandingPage() {
             <p
               className="font-custom font-light text-[2rem] text-center lg:text-left lg:text-[3rem]
               italic lg:not-italic text-textTertiaryColor">
-              Be a regular{" "} <br className="block lg:hidden"/>
+              Share your network{" "} <br/>
               <span className="lg:text-left not-italic font-semibold ">
-                  anywhere{" "}
+                  of{" "}
                 <br className="hidden lg:block"/>
-                  in the world{" "}
+                  favorite venues with your regulars{" "}
               </span>
             </p>
             <p
