@@ -36,11 +36,10 @@ export default function RegularLandingPage() {
         </div>
       </div>
       <div className={"lg:flex lg:flex-row items-center w-full h-auto lg:h-[48rem] lg:w-[70rem] lg:justify-between"}>
-        <div className="flex flex-col w-full h-[20rem] lg:h-[18rem] p-4 gap-[1.75rem] lg:text-left">
+        <div className="flex flex-col w-full h-full lg:h-[18rem] p-4 gap-[1.75rem] lg:text-left">
           <div className="flex-col w-full h-auto gap-4 lg:flex lg:gap-5">
-            <p
-              className="font-custom font-light text-[2rem] text-center lg:text-left lg:text-[3rem]
-              italic lg:not-italic text-textTertiaryColor">
+            <p className="font-custom font-light text-[2rem] text-center lg:text-left lg:text-[3rem]
+              lg:leading-[3.5rem] leading-[2.3rem] italic lg:not-italic text-textTertiaryColor">
               Be a regular{" "} <br className="block lg:hidden"/>
               <span className="lg:text-left not-italic font-semibold ">
                   anywhere{" "}
@@ -48,12 +47,11 @@ export default function RegularLandingPage() {
                   in the world{" "}
               </span>
             </p>
-            <p
-              className="text-[0.8rem] text-center lg:text-left lg:text-[1rem] w-[22rem] h-[4rem]
+            <p className="text-[0.8rem] text-center lg:text-left lg:text-[1rem] w-[22rem] h-[4rem]
               font-custom font-normal leading-[1.3rem] text-secondary">
               {randomText}
             </p>
-            <div className="flex flex-col h-auto lg:h-[3rem] w-full gap-4 lg:gap-0 lg:flex-row lg:w-full">
+            <div className="flex flex-col h-auto lg:h-[3.8rem] w-full gap-4 lg:gap-0 lg:flex-row lg:w-full">
               <input
                 type="email"
                 placeholder="Enter your email address"
