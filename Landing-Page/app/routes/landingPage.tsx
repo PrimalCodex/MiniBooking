@@ -11,7 +11,7 @@ export default function LandingPage() {
 
   const randomText = texts[Math.floor(Math.random() * texts.length)];
   return (
-    <div className="items-center flex flex-col overflow-hidden w-full ">
+    <div className="items-center flex flex-col w-full justify-center ">
       <div className="flex items-center justify-between text-left w-full lg:w-[70rem] h-[4.5rem] lg:h-[4rem]
       lg:px-0 px-[1.75rem] py-[1rem] lg:mt-5 gap-[1.75rem]
       border-b-white-[0.05rem]">
@@ -20,7 +20,7 @@ export default function LandingPage() {
           alt="Corner Table Logo"
           className="w-[6.25rem] lg:w-[10rem] h-[2.5rem] lg:h-[4rem]"
         />
-        <div className={'flex flex-none items-center w-auto gap-1'}>
+        <div className="flex flex-none items-center w-auto gap-1">
           <p
             className="font-custom text-textColor text-right lg:text-[0.9rem] text-[0.75rem] hidden lg:block">
             Do you in the hospitality industry?{" "}
@@ -35,8 +35,8 @@ export default function LandingPage() {
           </Link>
         </div>
       </div>
-      <div className={"lg:flex lg:flex-row items-center lg:h-[48rem] lg:w-[70rem] lg:justify-between"}>
-        <div className="flex flex-col w-fit h-[18rem] lg:h-[18rem] p-4 gap-[1.75rem] lg:text-left">
+      <div className={"lg:flex lg:flex-row items-center w-full h-auto lg:h-[48rem] lg:w-[70rem] lg:justify-between"}>
+        <div className="flex flex-col w-full h-[20rem] lg:h-[18rem] p-4 gap-[1.75rem] lg:text-left">
           <div className="flex-col w-full h-auto gap-4 lg:flex lg:gap-5">
             <p
               className="font-custom font-light text-[2rem] text-center lg:text-left lg:text-[3rem]
@@ -53,7 +53,7 @@ export default function LandingPage() {
               font-custom font-normal leading-[1.3rem] text-secondary">
               {randomText}
             </p>
-            <div className="flex flex-col h-auto lg:[h-3rem] w-full gap-4 lg:gap-0 lg:flex-row lg:w-full">
+            <div className="flex flex-col h-auto lg:h-[3rem] w-full gap-4 lg:gap-0 lg:flex-row lg:w-full">
               <input
                 type="email"
                 placeholder="Enter your email address"
@@ -69,7 +69,7 @@ export default function LandingPage() {
           </div>
         </div>
         <img
-          className="object-fill ml-10 lg:ml-0 w-full h-auto lg:h-[48rem] lg:w-[36rem]"
+          className="lg:object-fill object-contain ml-10 lg:ml-0 max-w-full h-auto lg:h-[48rem] lg:w-[36rem]"
           src="assets/Version01.png"
           alt="MobileView"
         />
