@@ -47,7 +47,7 @@ export default function RegularLandingPage() {
                   in the world{" "}
               </span>
             </p>
-            <p className="text-[0.8rem] text-center lg:text-left lg:text-[1rem] w-[22rem] h-[4rem]
+            <p className="text-[0.8rem] ml-5 text-center lg:text-left lg:text-[1rem] w-[22rem] h-[4rem]
               font-custom font-normal leading-[1.3rem] text-secondary">
               {randomText}
             </p>
