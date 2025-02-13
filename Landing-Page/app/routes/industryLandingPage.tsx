@@ -43,7 +43,7 @@ export default function RegularLandingPage() {
                   favorite venues with your regulars
               </span>
             </p>
-            <p className=" flex mb-2 text-center ml-5 lg:ml-0 lg:text-left text-[0.8rem] lg:text-[1rem] w-[22rem] h-[4rem]
+            <p className=" flex mb-2 text-center ml-5 lg:ml-0 lg:text-left text-[0.8rem] lg:text-[1rem] w-[full] h-[4rem]
               font-custom font-normal leading-[1.3rem] text-secondary">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
               et dolore magna aliqua.
