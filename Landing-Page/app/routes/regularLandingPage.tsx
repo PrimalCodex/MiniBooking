@@ -36,32 +36,32 @@ export default function RegularLandingPage() {
         </div>
       </div>
       <div className={"lg:flex lg:flex-row items-center w-full h-auto lg:h-[48rem] lg:w-[70rem] lg:justify-between"}>
-        <div className="flex flex-col w-full h-full lg:h-[18rem] p-4 gap-[1.75rem] lg:text-left">
-          <div className="flex-col w-full h-auto gap-4 lg:flex lg:gap-5">
-            <div className={'text-center'}>
-            <p className="font-custom font-light text-[2rem] lg:text-left lg:text-[3rem]
+        <div className="flex flex-col w-full h-full lg:h-[18rem] p-4 gap-5 lg:text-left">
+          <div className="flex-col w-full h-auto gap-5 lg:flex lg:gap-5">
+            <div className={'text-center flex flex-col gap-5'}>
+              <p className="font-custom font-light text-[2rem] lg:text-left lg:text-[3rem]
               lg:leading-[3.5rem] leading-[2.3rem] italic lg:not-italic text-textTertiaryColor">
-              Be a regular{" "} <br className="block lg:hidden"/>
-              <span className="lg:text-left not-italic font-semibold ">
+                Be a regular{" "} <br className="block lg:hidden"/>
+                <span className="lg:text-left not-italic font-semibold ">
                   anywhere{" "}
-                <br className="hidden lg:block"/>
+                  <br className="hidden lg:block"/>
                   in the world{" "}
               </span>
-            </p>
-            <p className="text-[0.8rem] lg:text-left lg:text-[1rem] w-[full] h-[4rem]
+              </p>
+              <p className="text-[0.8rem] lg:text-left lg:text-[1rem] w-[full] h-[4rem]
               font-custom font-normal leading-[1.3rem] text-secondary">
-              {randomText}
-            </p>
+                {randomText}
+              </p>
             </div>
             <div className="flex flex-col h-auto lg:h-[3.8rem] w-full gap-4 lg:gap-0 lg:flex-row lg:w-full">
               <input
                 type="email"
                 placeholder="Enter your email address"
                 className="w-full lg:w-[20rem] h-[3.25rem] lg:h-full outline-0 font-custom text-[0.8rem]
-                lg:text-[0.9rem] rounded-[0.25rem] bg-inputColor py-5 pl-[1rem] gap-2.5 "/>
+                lg:text-[0.9rem] rounded lg:rounded-l-lg bg-inputColor py-5 pl-[1rem] gap-2.5 "/>
               <button
                 className="w-full h-auto rounded px-3 py-4 gap-1 lg:text-[0.9rem] bg-customBrown
-                 text-white lg:w-[8rem] lg:rounded-tl-none lg:rounded-bl-none">
+                 text-white lg:w-[8rem] lg:rounded-r-lg">
                 <span className="block lg:hidden">Get notified</span>
                 <span className={"hidden lg:block font-custom font-[1rem]"}>Join waitlist</span>
               </button>

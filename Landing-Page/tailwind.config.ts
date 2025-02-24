@@ -9,7 +9,9 @@ export default {
         textColor: "#0E0E0C",
         textTertiaryColor: "#5A3B00",
         secondary:"#8B8271",
-        inputColor:"#F6F3F1"
+        inputColor:"#F6F3F1",
+        waitingList:"#009D15",
+        industryColor:"#EBDFD6"
 
 
 
