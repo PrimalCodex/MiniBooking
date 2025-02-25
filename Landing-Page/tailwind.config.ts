@@ -10,8 +10,11 @@ export default {
         textTertiaryColor: "#5A3B00",
         secondary:"#8B8271",
         inputColor:"#F6F3F1",
-        waitingList:"#009D15",
-        industryColor:"#EBDFD6"
+        successful:"#009D15",
+        industryColor:"#EBDFD6",
+        error:"#C20202",
+        buttonDisabledColor:"#EABCA2",
+        buttonHoverColor:"#5B2100",
 
 
 
