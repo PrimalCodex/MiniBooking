@@ -1,3 +1,4 @@
+import {useState} from "react";
 import {Button} from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -9,22 +10,23 @@ import {CircleDollarSign, Globe} from "lucide-react";
 import SearchBar from "@/components/SearchBar.tsx";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="w-full bg-green-900 text-white pb-10 shadow-sm">
+    <header className="w-full bg-green-900 text-white pb-10 shadow-sm relative">
       <div className="max-w-6xl mx-auto px-4 py-5 space-y-4">
-        {/* Row 1: Logo + Right Side Controls */}
-        <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 sm:gap-0">
+        {/* Row 1: Logo + Controls */}
+        <div className="flex items-center justify-between">
+          {/* Logo */}
           <div className="text-4xl font-bold">MiniBooking</div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full sm:w-auto justify-between">
-            {/* Left side: Language & Currency */}
-            <div
-              className="flex items-center gap-3 sm:gap-5 flex-wrap justify-center sm:justify-start w-full sm:w-auto">
+          {/* Desktop controls */}
+          <div className="hidden sm:flex items-center gap-6">
+            {/* Language & Currency */}
+            <div className="flex items-center gap-5">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button
-                    className=" bg-green-900 hover:bg-transparent
-                    transition px-4 py-2 text-sm sm:text-base flex items-center">
+                  <Button className="bg-green-900 hover:bg-transparent transition px-4 py-2 text-sm flex items-center">
                     <Globe className="w-4 h-4 mr-1"/>
                     EN
                   </Button>
@@ -38,8 +40,7 @@ export default function Header() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    className=" bg-green-900 hover:bg-transparent uppercase
-                    transition px-4 py-2 text-sm sm:text-base flex items-center">
+                    className="bg-green-900 hover:bg-transparent uppercase transition px-4 py-2 text-sm flex items-center">
                     <CircleDollarSign className="w-4 h-4 mr-1"/>
                     eur
                   </Button>
@@ -52,24 +53,74 @@ export default function Header() {
               </DropdownMenu>
             </div>
 
-            {/* Right side: Auth */}
-            <div className="flex gap-3 sm:gap-5 justify-center sm:justify-start w-full sm:w-auto">
+            {/* Auth buttons */}
+            <div className="flex gap-3">
               <Button
                 variant="outline"
-                className="rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm sm:text-base inline-flex"
+                className="rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm inline-flex"
               >
                 Log in
               </Button>
               <Button
-                className="rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm sm:text-base inline-flex"
+                className="rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm inline-flex"
               >
                 Register
               </Button>
             </div>
           </div>
+
+          {/* Hamburger button - only on small screens */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="sm:hidden p-2 rounded-md hover:bg-green-800 transition"
+            aria-label="Toggle menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              {menuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
         </div>
 
-        {/* Row 2: Centered Nav - horizontally scrollable on small */}
+        {/* Mobile menu dropdown (Login/Register inside) */}
+        {menuOpen && (
+          <div
+            className="sm:hidden fixed top-16 right-4 w-40 bg-green-900 rounded-md p-4 shadow-lg z-50 flex flex-col gap-3">
+            <Button
+              variant="outline"
+              className="w-full rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm"
+              onClick={() => setMenuOpen(false)}
+            >
+              Log in
+            </Button>
+            <Button
+              className="w-full rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm"
+              onClick={() => setMenuOpen(false)}
+            >
+              Register
+            </Button>
+          </div>
+        )}
+
+        {/* Row 2: Centered Nav */}
         <nav className="flex overflow-x-auto justify-center sm:justify-start space-x-3 mt-8 scrollbar-hide">
           {["Stays", "Flights", "Car Rentals"].map((item) => (
             <Button
@@ -90,6 +141,8 @@ export default function Header() {
           </p>
         </div>
       </div>
+
+      {/* SearchBar */}
       <div className="max-w-6xl mx-auto px-4 pt-6">
         <SearchBar/>
       </div>
