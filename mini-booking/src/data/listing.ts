@@ -1,0 +1,51 @@
+export const listings = [
+  {
+    image: "https://www.hotelscombined.com/himg/48/f8/dc/leonardo-1237489-Cit_Tour_Eiffel_Studio_Eiffel_Tower_View_.06-HR_O-353561.jpg",
+    name: "Paris City Hotel",
+    location: "Paris, France",
+    rating: 4.5,
+    reviews: 234,
+    price: 120,
+  },
+  {
+    image: "https://www.thehotelguru.com/_images/12/76/12767a48a5c5928a38193b4709932ce1/600x422.jpg",
+    name: "Central Park Stay",
+    location: "New York, USA",
+    rating: 4.8,
+    reviews: 382,
+    price: 180,
+  },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN-B2T5WtIafcbbNsEJ6B3bmOi4YheCG-AYw&s",
+    name: "Tokyo Urban Inn",
+    location: "Tokyo, Japan",
+    rating: 4.3,
+    reviews: 190,
+    price: 95,
+  },
+  {
+    image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/564196939.jpg?k=ef2af55be910f9d4131e3847faf7f73e65bb158ca07d5449d110f8e5a5f4c92f&o=&hp=1",
+    name: "Colosseum Boutique Hotel",
+    location: "Rome, Italy",
+    rating: 4.6,
+    reviews: 143,
+    price: 110,
+  },
+  {
+    image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/317886505.jpg?k=54e74db2e0c44528772aa7b8e206ce869bc888fba022a62ff3c667b78ea9dcfb&o=&hp=1",
+    name: "Barcelona Beachside Inn",
+    location: "Barcelona, Spain",
+    rating: 4.7,
+    reviews: 210,
+    price: 130,
+  },
+  {
+    image: "https://www.kristinazanic.com/application/files/cache/thumbnails/57d63cbe3da1194ccf9bd6af9b2d627a.jpg",
+    name: "Skyline Hotel Dubai",
+    location: "Dubai, UAE",
+    rating: 4.9,
+    reviews: 315,
+    price: 240,
+  },
+
+];

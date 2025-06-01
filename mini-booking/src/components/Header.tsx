@@ -23,7 +23,8 @@ export default function Header() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    className="rounded-full border-white text-white hover:bg-white hover:text-green-900 transition px-4 py-2 text-sm sm:text-base flex items-center">
+                    className=" bg-green-900 hover:bg-transparent
+                    transition px-4 py-2 text-sm sm:text-base flex items-center">
                     <Globe className="w-4 h-4 mr-1"/>
                     EN
                   </Button>
@@ -37,7 +38,8 @@ export default function Header() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    className="uppercase rounded-full border-white text-white hover:bg-white hover:text-green-900 transition px-4 py-2 text-sm sm:text-base flex items-center">
+                    className=" bg-green-900 hover:bg-transparent uppercase
+                    transition px-4 py-2 text-sm sm:text-base flex items-center">
                     <CircleDollarSign className="w-4 h-4 mr-1"/>
                     eur
                   </Button>
@@ -54,7 +56,7 @@ export default function Header() {
             <div className="flex gap-3 sm:gap-5 justify-center sm:justify-start w-full sm:w-auto">
               <Button
                 variant="outline"
-                className="rounded-full border-white text-white hover:bg-white hover:text-green-900 transition px-5 py-2 text-sm sm:text-base inline-flex"
+                className="rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm sm:text-base inline-flex"
               >
                 Log in
               </Button>
@@ -73,7 +75,7 @@ export default function Header() {
             <Button
               key={item}
               variant="outline"
-              className="px-6 py-5 text-lg rounded-full border-white text-white hover:bg-white hover:text-green-900 transition whitespace-nowrap flex-shrink-0"
+              className="rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm sm:text-base inline-flex"
             >
               {item}
             </Button>
