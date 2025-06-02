@@ -14,7 +14,7 @@ export default function LoginForm() {
       return;
     }
     setError("");
-    // TODO: Add your login logic here
+
     alert(`Logging in with ${email}`);
   };
 

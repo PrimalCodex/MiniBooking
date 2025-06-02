@@ -11,15 +11,7 @@ interface ListingCardProps {
   price: number;
 }
 
-export default function ListingCard({
-                                      id,
-                                      image,
-                                      name,
-                                      location,
-                                      rating,
-                                      reviews,
-                                      price,
-                                    }: ListingCardProps) {
+export default function ListingCard({id, image, name, location, rating, reviews, price,}: ListingCardProps) {
   return (
     <div className="border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition bg-white">
       <Link to={`/listing/${id}`}>
