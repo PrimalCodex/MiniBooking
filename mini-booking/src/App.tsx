@@ -8,6 +8,7 @@ import {useState} from "react";
 import ListingDetails from "@/pages/ListingDetails.tsx";
 import ConfirmationPage from "@/pages/ConfirmationPage.tsx";
 
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<ListingsGrid/>}/>
           <Route path="/listing/:id" element={<ListingDetails/>}/>
           <Route path="/confirmation" element={<ConfirmationPage/>}/>
+
         </Routes>
       </main>
     </>

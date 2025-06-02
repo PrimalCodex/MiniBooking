@@ -6,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu.tsx";
-import {CircleDollarSign, Globe} from "lucide-react";
+import {CircleDollarSign, Globe, User} from "lucide-react";
 import SearchBar from "@/components/SearchBar.tsx";
 
 export default function Header() {
@@ -15,14 +15,9 @@ export default function Header() {
   return (
     <header className="w-full bg-green-900 text-white pb-10 shadow-sm relative">
       <div className="max-w-6xl mx-auto px-4 py-5 space-y-4">
-        {/* Row 1: Logo + Controls */}
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <div className="text-4xl font-bold">MiniBooking</div>
-
-          {/* Desktop controls */}
           <div className="hidden sm:flex items-center gap-6">
-            {/* Language & Currency */}
             <div className="flex items-center gap-5">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -54,18 +49,9 @@ export default function Header() {
             </div>
 
             {/* Auth buttons */}
-            <div className="flex gap-3">
-              <Button
-                variant="outline"
-                className="rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm inline-flex"
-              >
-                Log in
-              </Button>
-              <Button
-                className="rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm inline-flex"
-              >
-                Register
-              </Button>
+            <div className="flex items-center gap-2 cursor-pointer select-none">
+              <User className="w-6 h-6 text-white"/>
+              <span className="font-medium">John Doe</span>
             </div>
           </div>
 
@@ -102,21 +88,9 @@ export default function Header() {
 
         {/* Mobile menu dropdown (Login/Register inside) */}
         {menuOpen && (
-          <div
-            className="sm:hidden fixed top-16 right-4 w-40 bg-green-900 rounded-md p-4 shadow-lg z-50 flex flex-col gap-3">
-            <Button
-              variant="outline"
-              className="w-full rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm"
-              onClick={() => setMenuOpen(false)}
-            >
-              Log in
-            </Button>
-            <Button
-              className="w-full rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm"
-              onClick={() => setMenuOpen(false)}
-            >
-              Register
-            </Button>
+          <div className="flex items-center gap-2 cursor-pointer select-none">
+            <User className="w-6 h-6 text-white"/>
+            <span className="font-medium">John Doe</span>
           </div>
         )}
 
@@ -126,7 +100,7 @@ export default function Header() {
             <Button
               key={item}
               variant="outline"
-              className="rounded-full bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm sm:text-base inline-flex"
+              className="rounded-2xl bg-white text-green-900 hover:bg-gray-100 transition px-5 py-2 text-sm sm:text-base inline-flex"
             >
               {item}
             </Button>

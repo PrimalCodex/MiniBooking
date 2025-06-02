@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {Button} from "@/components/ui/button.tsx";
 import {Input} from "@/components/ui/input.tsx";
+import {Link} from "react-router-dom";
 
 export default function RegisterForm() {
   const [email, setEmail] = useState("");
@@ -30,7 +31,7 @@ export default function RegisterForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md"
+      className="max-w-md w-full mx-auto p-6 bg-white rounded-lg shadow-md"
     >
       <h2 className="text-2xl font-semibold mb-6 text-green-900">Register</h2>
 
@@ -80,6 +81,13 @@ export default function RegisterForm() {
       >
         Register
       </Button>
+
+      <p className="text-sm mt-4 text-center">
+        Already have an account?{" "}
+        <Link to="/" className="text-green-900 hover:underline">
+          Log In
+        </Link>
+      </p>
     </form>
   );
 }
