@@ -1,7 +1,12 @@
+import {Routes, Route} from "react-router-dom";
+import Header from "@/components/Header";
+import ListingsGrid from "@/components/ListingGrid";
+import AuthPage from "@/components/AuthPage";
+
+
 import {useState} from "react";
-import Header from "@/components/Header.tsx";
-import ListingsGrid from "@/components/ListingGrid.tsx";
-import AuthPage from "@/components/AuthPage.tsx";
+import ListingDetails from "@/pages/ListingDetails.tsx";
+import ConfirmationPage from "@/pages/ConfirmationPage.tsx";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -13,20 +18,13 @@ function App() {
   return (
     <>
       <Header/>
-      <main className="p-4 flex flex-row">
-        <ListingsGrid/>
+      <main className="p-4">
+        <Routes>
+          <Route path="/" element={<ListingsGrid/>}/>
+          <Route path="/listing/:id" element={<ListingDetails/>}/>
+          <Route path="/confirmation" element={<ConfirmationPage/>}/>
+        </Routes>
       </main>
-      <footer className="p-4 mt-8 text-center text-gray-400 text-sm border-t border-gray-200">
-        Development Testing Project by PrimalCodex <br/>
-        <a
-          href="https://nedimkevroinfo.vercel.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-300 hover:underline"
-        >
-          nedimkevroinfo.vercel.app
-        </a>
-      </footer>
     </>
   );
 }
