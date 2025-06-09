@@ -1,6 +1,8 @@
 "use client";
+import { auth } from "@/lib/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
-import {useState} from "react";
+import React, {useState} from "react";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import {Label} from "@/components/ui/label";
@@ -12,25 +14,31 @@ export default function RegisterForm() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
-    // TODO: registration logic here (Firebase, API call, etc)
-    console.log("Registering", {email, password});
-  };
-  const handleGoogleSignUp = () => {
-    // TODO: Implement Google Sign-In (Firebase, OAuth, etc)
-    console.log("Sign in with Google");
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      console.log("Registered user:", user);
+
+      // Optional: redirect to dashboard/homepage
+      // router.push("/dashboard"); // if using next/navigation or next/router
+    } catch (error: any) {
+      console.error("Registration error:", error.message);
+      alert(error.message)
+    }
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md mx-auto p-8 rounded-lg bg-white shadow-md space-y-6"
+        className="w-full max-w-lg mx-auto p-8 rounded-lg bg-white shadow-md space-y-6"
       >
         <h1 className="text-3xl font-bold text-center text-blue-700">Create your account</h1>
 
@@ -39,6 +47,7 @@ export default function RegisterForm() {
             Email address
           </Label>
           <Input
+            className="focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-blue-700"
             id="email"
             type="email"
             value={email}
@@ -53,6 +62,7 @@ export default function RegisterForm() {
             Password
           </Label>
           <Input
+            className="focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-blue-700"
             id="password"
             type="password"
             value={password}
@@ -67,6 +77,7 @@ export default function RegisterForm() {
             Confirm password
           </Label>
           <Input
+            className="focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-blue-700"
             id="confirmPassword"
             type="password"
             value={confirmPassword}
@@ -74,6 +85,20 @@ export default function RegisterForm() {
             placeholder="Confirm your password"
             required
           />
+        </div>
+        <div className="flex items-center space-x-2">
+          <input
+            id="terms"
+            type="checkbox"
+            required
+            className="h-4 w-4 text-blue-700 border-gray-300 rounded"
+          />
+          <label htmlFor="terms" className="text-sm text-gray-600">
+            I agree to the{" "}
+            <Link href="/terms" className="text-blue-700 underline">Terms of Service</Link>{" "}
+            and{" "}
+            <Link href="/privacy" className="text-blue-700 underline">Privacy Policy</Link>.
+          </label>
         </div>
 
         <Button type="submit" className="text-white w-full bg-blue-700 hover:bg-blue-800">
@@ -89,7 +114,7 @@ export default function RegisterForm() {
         <Button
           variant="outline"
           className="flex items-center justify-center w-full space-x-2 border-gray-300 text-gray-700 hover:bg-gray-100"
-          onClick={handleGoogleSignUp}
+          onClick={handleSubmit}
           type="button"
         >
           <FcGoogle size={20} />
